@@ -56,6 +56,11 @@ int main() {
     delete [] posNum1;
     delete [] outPosArr;
     delete [] posNum2;
+    
+    posNum1 = NULL;
+    outPosArr = nullptr;
+    posNum2 = nullptr;
+
 
     return 0;
 }
