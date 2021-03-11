@@ -23,21 +23,23 @@ int main(){
 
 
 void oddsKeepEvensFlip(int arr[], int arrSize){
-        int arrTemp[arrSize];
-        int count = 0;
-        for (int i = 0; i < arrSize; i++) {
-            if (arr[i] % 2 == 1){
-                arrTemp[count++] = arr[i];
-            }
+    int arrTemp[arrSize];
+    int *ptr;
+    ptr = arrTemp;
+    int count = 0;
+    for (int i = 0; i < arrSize; i++) {
+        if (arr[i] % 2 == 1){
+            *(ptr + count++) = arr[i];
         }
-        for (int i = arrSize - 1; i >= 0; i--) {
-            if (arr[i] % 2 == 0){
-                arrTemp[count++] = arr[i];
-            }
+    }
+    for (int i = arrSize - 1; i >= 0; i--) {
+        if (arr[i] % 2 == 0){
+            *(ptr + count++) = arr[i];
         }
-        for (int i = 0; i < arrSize; i++) {
-            arr[i] = arrTemp[i];
-        }
+    }
+    for (int i = 0; i < arrSize; i++) {
+        arr[i] = *(ptr + i);
+    }
 }
 
 
